@@ -1,0 +1,126 @@
+<html>
+
+<head>
+    <title>Nurdiah Amalia Sani - 06311940000051</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<!-- Write your comments here -->
+
+<body>
+    <div>
+        <canvas id="myChart"></canvas>
+    </div>
+
+    <script>
+        const labels = [
+            'Cambodia',
+            'Malaysia',
+            'Myanmar',
+            'Thailand',
+            'Vietnam',
+            'Philippines',
+            'Indonesia',
+        ];
+
+        const data = {
+            labels: labels,
+            datasets: [
+                {
+                    label: 'Net Change',
+                    backgroundColor: 'rgb(208, 255, 252)',
+                    borderColor: 'rgb( 55, 226, 215 )',
+                    data: [4194,
+                        46005,
+                        106105,
+                        232423,
+                        416222,
+                        364380,
+                        174396,
+                        876473,
+                        1464463,
+                        2898047],
+                },
+                {
+                    label: 'Population in 2019',
+                    backgroundColor: 'rgb(255, 142, 124)',
+                    borderColor: 'rgb( 250, 199, 191 )',
+                    data: [16486542,
+                        32782221,
+                        54774180,
+                        69974374,
+                        98215052,
+                        108116615,
+                        270625568
+                    ],
+                },
+                {
+                    label: 'Population in 2020',
+                    backgroundColor: 'rgb(225, 247, 181 )',
+                    fill: '-1',
+                    borderColor: 'rgb( 185, 227, 102 )',
+                    data: [16718965,
+                        32365999,
+                        54409800,
+                        69799978,
+                        97338579,
+                        109581078,
+                        273523615
+                    ],
+                },
+
+            ]
+        };
+
+        const config = {
+            type: 'line',
+            data: data,
+            options: {
+                scales: {
+                    y: {
+                        stacked: true
+                    }
+                },
+                animations: {
+                    radius: {
+                        duration: 100,
+                        easing: 'linear',
+                        loop: (context) => context.active
+                    }
+                },
+                hoverRadius: 12,
+                hoverBackgroundColor: 'yellow',
+                interaction: {
+                    mode: 'nearest',
+                    intersect: false,
+                    axis: 'x'
+                },
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'right',
+                        labels: {
+                            color: 'rgb(110, 96, 93)'
+                        }
+                    },
+                    title: {
+                        display: true,
+                        text: 'Population of ASEAN Countries Above 10 Million People',
+                    },
+                },
+
+            }
+        };
+    </script>
+
+    <script>
+        const myChart = new Chart(
+            document.getElementById('myChart'),
+            config
+        );
+    </script>
+
+
+</body>
+
+</html>
